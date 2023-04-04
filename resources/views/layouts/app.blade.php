@@ -20,11 +20,11 @@
             <h1 class="text-2xl text-gray-600 font-black">
                 <nav>
                     <a class="text-blue-600 hover:text-blue-500" href="/registro">
-                        <span class="font-bold">Register</span>
+                        <span class="font-bold">Registro</span>
                     </a>
 
                     <a class="text-blue-600 hover:text-blue-500" href="/ingreso ">
-                        <span class="font-bold">Login</span>
+                        <span class="font-bold">Acceder</span>
                     </a>
                 </nav>
 
