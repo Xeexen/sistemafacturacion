@@ -18,6 +18,7 @@ class RegisterController extends Controller
         //dd($request);
 
         $this->validate($request, [
+            'ruc' => 'require|numeric|unique:users',
             'nombre' => 'required',
             'apellido' => 'required',
             'direccion' => 'required',
@@ -27,11 +28,16 @@ class RegisterController extends Controller
 
 
         User::create([
+            'ruc' => $request->Str::slug($request->ruc),
             'nombre' => $request->nombre,
             'apellido' => $request->apellido,
             'direccion' => $request->direccion,
             'correo' => $request->correo,
             'telefono' => $request->telefono,
         ]);
+
+        auth()-> attempt($request->only('ruc'));
+
+        return redirect()->route('post.index');
     }
 }
