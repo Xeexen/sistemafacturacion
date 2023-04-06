@@ -12,5 +12,19 @@ class LoginController extends Controller
          return view('login');
     }
 
+    public function store(request $request){
+        $request->validate([
+            'correo' =>'required|email',
+            '' =>'required|min:6',
+        ]);
+
+        if(!auth()->attempt($request->only('correo'), ($request->remember))){
+            return back()->withErrors(['correo' => trans('auth.failed'), ]);
+        }
+
+        return redirect()->route('post.index', auth()->user()->ruc);
+   
+    }
+
    
 }

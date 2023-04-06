@@ -44,6 +44,9 @@
                         </p>
                     @enderror
                 </div>
+                <div class="mb-5">
+                    <input type="checkbox" name="remember"> Mantener Sesion Abierta
+                </div>
                 <button
                     class="w-full md:w-auto bg-blue-500 text-white font-bold py-2 px-4 border border-blue-600 rounded-lg">
                     Entrar

@@ -17,9 +17,30 @@
                 Nombre Empresa
             </h1>
 
+            @auth
+                <a href="{{ route('login') }}" class="text-xl text-blue-500 hover:text-blue-700">
+                    Log in
+                </a>
+            @else
+                <a class="text-blue-600 hover:text-blue-500" href="/registro">
+                    <span class="font-normal">{{ auth()->user()->username }}
+
+                    </span>
+                </a>
+
+                <form method="POST" action="{{ route('logout') }}">
+
+                    <buttom class="text-blue-600 hover:text-blue-500">
+                        <span class="font-bold">Cerrar Sesion</span>
+                    </buttom>
+                    
+                </form>
+
+            @endauth
+
             <h1 class="text-2xl text-gray-600 font-black">
                 <nav>
-                    <a class="text-blue-600 hover:text-blue-500" href="/registro">
+                    <a class="text-blue-600 hover:text-blue-500" href="/logout">
                         <span class="font-bold">Registro</span>
                     </a>
 
